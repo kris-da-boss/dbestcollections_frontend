@@ -1,0 +1,189 @@
+.admin-dashboard__header { margin-bottom: 32px; }
+.admin-dashboard__title { font-family: var(--font-display); font-size: 2.2rem; color: var(--white); }
+.admin-dashboard__subtitle { color: var(--muted); margin-top: 4px; }
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--off-black);
+  border: 1px solid var(--dark-3);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.admin-stat-card:hover { border-color: var(--gold-border); transform: translateY(-2px); }
+.admin-stat-card__icon { width: 48px; height: 48px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.admin-stat-card__value { font-size: 1.4rem; font-weight: 700; color: var(--white); }
+.admin-stat-card__label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+.admin-stat-card__trend { display: flex; align-items: center; gap: 4px; font-size: 0.78rem; font-weight: 600; margin-left: auto; }
+
+.admin-dashboard__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.admin-card {
+  background: var(--off-black);
+  border: 1px solid var(--dark-3);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+.admin-card__title { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 20px; }
+
+/* Bar Chart */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 160px;
+  padding-bottom: 24px;
+  position: relative;
+}
+.bar-chart::after {
+  content: '';
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--dark-3);
+}
+.bar-chart__item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; }
+.bar-chart__bar-wrap { flex: 1; width: 100%; display: flex; align-items: flex-end; }
+.bar-chart__bar {
+  width: 100%;
+  background: linear-gradient(to top, var(--gold), var(--gold-light));
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+}
+.bar-chart__bar:hover { background: linear-gradient(to top, var(--gold-light), #f5d87a); }
+.bar-chart__tooltip {
+  display: none;
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark-3);
+  color: var(--off-white);
+  font-size: 0.65rem;
+  padding: 3px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.bar-chart__bar:hover .bar-chart__tooltip { display: block; }
+.bar-chart__label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; }
+
+/* Recent Orders */
+.admin-orders-list { display: flex; flex-direction: column; gap: 12px; }
+.admin-order-row { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--dark-3); }
+.admin-order-row:last-child { border-bottom: none; }
+.admin-order-row__num { font-size: 0.88rem; font-weight: 700; color: var(--gold); }
+.admin-order-row__customer { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+.admin-order-row__amount { margin-left: auto; font-weight: 700; color: var(--off-white); font-size: 0.9rem; }
+
+/* Top Products */
+.admin-top-products { display: flex; flex-direction: column; gap: 14px; }
+.admin-product-row { display: flex; align-items: center; gap: 14px; }
+.admin-product-row__rank { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); width: 28px; text-align: center; flex-shrink: 0; }
+.admin-product-row__img { width: 44px; height: 52px; object-fit: cover; border-radius: var(--radius-sm); background: var(--dark-2); flex-shrink: 0; }
+.admin-product-row__name { font-size: 0.88rem; font-weight: 600; color: var(--off-white); }
+.admin-product-row__sold { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.admin-product-row__price { margin-left: auto; font-weight: 700; color: var(--gold); }
+
+/* Admin tables used across admin pages */
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--dark-3);
+  background: var(--dark-2);
+}
+.admin-table td { padding: 14px 16px; font-size: 0.85rem; color: var(--light-muted); border-bottom: 1px solid var(--dark-3); }
+.admin-table tr:hover td { background: var(--dark-2); }
+.admin-table tr:last-child td { border-bottom: none; }
+
+/* Admin page headers */
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.admin-page-title { font-family: var(--font-display); font-size: 2rem; color: var(--white); }
+
+/* Admin search bar */
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.admin-search input { flex: 1; max-width: 340px; }
+
+@media (max-width: 1024px) {
+  .admin-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-dashboard__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .admin-stats-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Modal ──────────────────────────────────────────────────── */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.admin-modal {
+  background: var(--off-black);
+  border: 1px solid var(--dark-3);
+  border-top: 2px solid var(--gold);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: scaleIn 0.25s ease;
+}
+
+.admin-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--dark-3);
+}
+.admin-modal__header h3 { font-family: var(--font-display); font-size: 1.3rem; }
+
+.admin-modal__body { padding: 24px; }
+
+.admin-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--dark-3);
+}

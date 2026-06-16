@@ -1,0 +1,106 @@
+.auth-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  background: radial-gradient(ellipse at 60% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--off-black);
+  border: 1px solid var(--dark-3);
+  border-radius: var(--radius-xl);
+  padding: 48px 40px;
+}
+
+.auth-card--wide { max-width: 520px; }
+
+.auth-card__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  margin-bottom: 28px;
+}
+
+.auth-brand-d {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.auth-card__title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.auth-card__subtitle {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+/* Input with icon */
+.auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.auth-input { padding-left: 42px !important; }
+
+.auth-pwd-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+.auth-pwd-toggle:hover { color: var(--gold); }
+
+.auth-forgot {
+  text-align: right;
+  margin-bottom: 20px;
+  margin-top: -8px;
+}
+.auth-forgot a { font-size: 0.82rem; color: var(--muted); transition: var(--transition); }
+.auth-forgot a:hover { color: var(--gold); }
+
+.auth-submit { margin-top: 8px; }
+
+.auth-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.auth-footer a { color: var(--gold); font-weight: 600; }
+.auth-footer a:hover { color: var(--gold-light); }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 32px 24px; }
+}
